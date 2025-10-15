@@ -21,10 +21,15 @@ The script automatically:
 ## ✨ Features
 
 ✅ **Automatic Detection** - No need to define boxes in config
-✅ **Framework Support** - Auto-detects QBox, QBCore, or ESX  
+
+✅ **Framework Support** - Auto-detects QBox, QBCore, or ESX
+
 ✅ **ox_inventory Native** - Uses proper exports and hooks
+
 ✅ **Animations** - Smooth opening animations with progress bars
+
 ✅ **Lightweight** - 0.00ms idle, minimal code
+
 ✅ **Flexible** - Easy to add new ammo types
 
 ## 📦 Installation
