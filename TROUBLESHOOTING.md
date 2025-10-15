@@ -177,8 +177,6 @@ RegisterCommand('testanim', function()
 end)
 ```
 
-See `ANIMATION_GUIDE.md` for more tested animations.
-
 ---
 
 ### Issue #5: Box Doesn't Work / Nothing Happens
@@ -661,5 +659,6 @@ Create a super simple test item:
 If this works, your setup is fine and the issue is with specific items.
 
 ---
+
 
 **Still having issues? The problem might be unique to your setup. Enable debug mode and check the console output carefully!**
