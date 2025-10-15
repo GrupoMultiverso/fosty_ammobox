@@ -1,0 +1,141 @@
+-- Example configuration for adding ammo boxes to ox_inventory shops
+-- Add this to your ox_inventory/data/shops.lua or create a new shop
+
+return {
+    -- Ammunation Shop with Ammo Boxes
+    Ammunation = {
+        name = 'Ammunation',
+        blip = {
+            id = 110,
+            colour = 1,
+            scale = 0.8,
+        },
+        inventory = {
+            -- Ammo Boxes
+            { name = 'ammo-9-box', price = 150 },
+            { name = 'ammo-45-box', price = 175 },
+            { name = 'ammo-rifle-box', price = 200 },
+            { name = 'ammo-rifle2-box', price = 250 },
+            { name = 'ammo-shotgun-box', price = 225 },
+            { name = 'ammo-sniper-box', price = 300 },
+            { name = 'ammo-22-box', price = 100 },
+            { name = 'ammo-50-box', price = 500 },
+            
+            -- Regular Ammo (if you still want to sell individual rounds)
+            { name = 'ammo-9', price = 5 },
+            { name = 'ammo-45', price = 6 },
+            { name = 'ammo-rifle', price = 7 },
+            { name = 'ammo-rifle2', price = 8 },
+            { name = 'ammo-shotgun', price = 10 },
+            { name = 'ammo-sniper', price = 15 },
+            { name = 'ammo-22', price = 3 },
+            { name = 'ammo-50', price = 25 },
+            
+            -- Weapons (example)
+            { name = 'WEAPON_PISTOL', price = 2500, metadata = { registered = true }, license = 'weapon' },
+        },
+        locations = {
+            vec3(-662.180, -934.961, 21.829),
+            vec3(810.25, -2157.60, 29.62),
+            vec3(1693.44, 3760.16, 34.71),
+            vec3(-330.24, 6083.88, 31.45),
+            vec3(252.63, -50.00, 69.94),
+            vec3(22.56, -1109.89, 29.80),
+            vec3(2567.69, 294.38, 108.73),
+            vec3(-1117.58, 2698.61, 18.55),
+            vec3(842.44, -1033.42, 28.19),
+        },
+        targets = {
+            -- Target zones for each location (if using ox_target or qb-target)
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-662.180, -934.961, 20.829), heading = 180.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(810.25, -2157.60, 28.62), heading = 360.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(1693.44, 3760.16, 33.71), heading = 227.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-330.24, 6083.88, 30.45), heading = 225.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(252.63, -50.00, 68.94), heading = 70.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(22.56, -1109.89, 28.80), heading = 160.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(2567.69, 294.38, 107.73), heading = 360.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-1117.58, 2698.61, 17.55), heading = 223.0 },
+            { ped = `s_m_y_ammucity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(842.44, -1033.42, 27.19), heading = 360.0 },
+        }
+    },
+
+    -- Black Market Shop (Higher prices, no license required)
+    BlackMarket = {
+        name = 'Black Market',
+        groups = {
+            -- Only certain jobs can access
+            -- ['gang'] = 0,
+        },
+        inventory = {
+            -- Ammo Boxes at higher prices
+            { name = 'ammo-9-box', price = 300, currency = 'black_money' },
+            { name = 'ammo-45-box', price = 350, currency = 'black_money' },
+            { name = 'ammo-rifle-box', price = 400, currency = 'black_money' },
+            { name = 'ammo-rifle2-box', price = 500, currency = 'black_money' },
+            { name = 'ammo-shotgun-box', price = 450, currency = 'black_money' },
+            { name = 'ammo-sniper-box', price = 600, currency = 'black_money' },
+            { name = 'ammo-50-box', price = 1000, currency = 'black_money' },
+        },
+        locations = {
+            vec3(309.09, -913.75, 56.46), -- Example location
+        },
+    },
+
+    -- Police Armory (Job locked)
+    PoliceArmory = {
+        name = 'Police Armory',
+        groups = {
+            police = 0, -- All police ranks
+            sheriff = 0,
+        },
+        inventory = {
+            -- Ammo Boxes for free or discounted
+            { name = 'ammo-9-box', price = 0 },
+            { name = 'ammo-45-box', price = 0 },
+            { name = 'ammo-rifle-box', price = 0 },
+            { name = 'ammo-shotgun-box', price = 0 },
+            { name = 'ammo-sniper-box', price = 0 },
+        },
+        locations = {
+            vec3(452.3, -980.0, 30.7), -- Mission Row PD
+            vec3(1841.3, 3690.0, 34.3), -- Sandy Shores PD
+            vec3(-449.5, 6013.0, 31.7), -- Paleto Bay PD
+        },
+    },
+
+    -- Hunting/Sporting Goods Store
+    HuntingStore = {
+        name = 'Hunting & Outdoors',
+        blip = {
+            id = 141,
+            colour = 2,
+            scale = 0.8,
+        },
+        inventory = {
+            -- Hunting specific ammo
+            { name = 'ammo-22-box', price = 80 },
+            { name = 'ammo-rifle-box', price = 180 },
+            { name = 'ammo-shotgun-box', price = 200 },
+        },
+        locations = {
+            vec3(-679.13, 5839.52, 17.33), -- Paleto Bay
+        },
+    },
+}
+
+--[[
+    INTEGRATION NOTES:
+    
+    1. For ox_inventory, add shops to: ox_inventory/data/shops.lua
+    2. For qb-shops, convert to QB format and add to: qb-shops/config.lua
+    3. Adjust prices based on your economy
+    4. Consider adding stock limits with: count = 50
+    5. Add currency types: currency = 'money' or 'black_money'
+    6. Use metadata for unique items: metadata = { quality = 100 }
+    
+    ECONOMY BALANCE SUGGESTIONS:
+    - Boxes should cost slightly less per round than buying individual
+    - Example: 50 rounds individually = 250 (5 each), box = 200-225
+    - Black market: 2-3x normal prices
+    - Police/EMS: Free or heavily discounted
+]]
