@@ -365,10 +365,8 @@ resources/
     └── fosty_ammo/    ← Folder name
         ├── fxmanifest.lua
         ├── config.lua
-        ├── server/
-        │   └── main.lua
-        └── client/
-            └── main.lua
+        ├── server.lua
+        └── client.lua
 ```
 
 2. **Verify fxmanifest.lua:**
@@ -383,11 +381,11 @@ shared_scripts {
 }
 
 client_scripts {
-    'client/main.lua'
+    'clientlua'
 }
 
 server_scripts {
-    'server/main.lua'
+    'server.lua'
 }
 ```
 
@@ -662,3 +660,4 @@ If this works, your setup is fine and the issue is with specific items.
 
 
 **Still having issues? The problem might be unique to your setup. Enable debug mode and check the console output carefully!**
+
