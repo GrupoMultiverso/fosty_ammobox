@@ -2,6 +2,9 @@
 
 **Truly plug-and-play ammo box system for QBox/QBCore with ox_inventory**
 
+**All credit goes to Fosty_lepi on CFX Forum. He is the creator of the original code.**
+Original link: https://forum.cfx.re/t/free-fosty-ammobox-esx-qb-ox-inventory/
+
 ## 🎯 The Smart Way
 
 This script is **automatic** - you only need to add items to ox_inventory's items.lua!
